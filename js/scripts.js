@@ -126,8 +126,8 @@ $(document).ready(function(){
     $('.bxslider').bxSlider({
       mode: 'fade',
       captions: true,
-      slideWidth: 900
-      
+      slideWidth: 900,
+      touchEnabled:false
 
     });
   });
