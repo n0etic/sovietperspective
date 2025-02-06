@@ -47,7 +47,7 @@ function closeNav() {
 
 
 
-
+/*
 
 function openCurtain() {
     left.style.transform = 'translateX(-35%)';
@@ -69,6 +69,44 @@ function closeCurtain() {
     curtainButton.style.display = '';
 
  
+}
+
+*/
+
+
+
+function openCurtain() {
+  const left = document.getElementById('home-pic-left');
+  const right = document.getElementById('home-pic-right');
+  const homeMenu = document.getElementById('home-menu');
+  const curtainButton = document.getElementById('home-menu-button');
+  
+  if (window.innerWidth <= 768) {  // Mobile size
+      left.style.transform = 'translateX(-100%)';
+      right.style.transform = 'translateX(100%)';
+  } else { // Desktop
+      left.style.transform = 'translateX(-35%)';
+      right.style.transform = 'translateX(30%)';
+  }
+
+  left.style.transition = 'transform 1.0s';
+  right.style.transition = 'transform 1.0s';
+  homeMenu.style.display = 'inherit';
+  curtainButton.style.display = 'none';
+}
+
+function closeCurtain() {
+  const left = document.getElementById('home-pic-left');
+  const right = document.getElementById('home-pic-right');
+  const homeMenu = document.getElementById('home-menu');
+  const curtainButton = document.getElementById('home-menu-button');
+  
+  left.style.transform = 'translateX(0%)';
+  right.style.transform = 'translateX(0%)';
+  left.style.transition = 'transform 1.0s';
+  right.style.transition = 'transform 1.0s';
+  homeMenu.style.display = 'none';
+  curtainButton.style.display = '';
 }
 
 
