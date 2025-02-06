@@ -3,13 +3,140 @@ body{
     margin: 0%;
 }
 
-#home-page{  
+
+
+#home-page {
     margin: 0%;
     background-color: #F5F5F5;
-    overflow: visible;
-    min-height: 100vh;
+    overflow: auto; /* Allow scrolling on mobile */
+    height: auto;   /* Allow content to flow on mobile */
+}
+
+
+/* HOME PAGE */
+
+
+
+#home-header{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 13;
+    flex-direction: column;
+}
+
+
+#home-title {
+    font-family: john-doe, sans-serif;
+    font-style: normal;
+    font-size: 40px; /* Default for desktop */
+    color: #B11E16;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #00000029;
+    text-align: center;
+ 
+    margin-top: 20px;
+    
     
 }
+
+
+
+#home-menu-button {
+    background-image: url('../img/Menu_icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30px; /* Adjusted size */
+    width: 40px; /* Adjusted size */
+    margin: 0 auto; /* Centers horizontally */
+    margin-top: 30px;
+    display: block;
+}
+
+
+
+
+#home-menu {
+  
+
+    
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none; /* Initially hidden */
+        z-index: 30;
+    
+}
+
+#home-menu > a {
+    font-family: john-doe, sans-serif;
+    font-size: 25pt;
+    color: #2D2D2D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 34px 0% 0% 0%;
+    text-decoration: none;
+}
+
+
+
+
+
+#home-pic {
+    display: flex;    
+    z-index: 3;
+    position: relative;
+    overflow: hidden;
+    margin-top: 200px;
+}
+
+#home-pic-left {
+    background-image: url('../img/home-left.png');
+    width: 100%;
+    background-size: cover; /* Full width of the container */
+    background-position: right;
+    background-repeat: no-repeat;
+    z-index: 3;
+    position: relative;
+    margin-top: 0;
+    height: 100vh; /* Full height for mobile */
+}
+
+
+#home-pic-right{
+    background-image: url('../img/home-right.png');
+    width: 100%;
+    background-size: cover; /* Full width of the container */
+    background-position: left;
+    background-repeat: no-repeat;
+    z-index: 3;
+    position: relative;
+    margin-top: 0;
+    height: 100vh; /* Full height for mobile */
+
+}
+
+ #split-left {
+    width: 50%;
+    overflow: hidden;
+  }
+
+  #split-right {
+    width: 50%;
+    overflow: hidden;
+  }
+  
+  
+
+
+
+
+
+
 
 
 /* HEADER */
@@ -141,7 +268,9 @@ nav{
 .parallax-window {
 	min-height: 600px;
 	background: transparent;
+    background-repeat: no-repeat;
 }
+
 
 
 #textbooks-pic{
@@ -394,7 +523,7 @@ h4{
 
 /* DESKTOP MEDIA QUERIES */
 
-@media screen and (min-width:429px){
+@media screen and (min-width:821px){
 
     .parallax-window {
         min-height: 800px;
@@ -402,11 +531,19 @@ h4{
     }
    
 
+    #home-page{  
+        margin: 0%;
+        background-color: #F5F5F5;
+        overflow: hidden;
+        height: 100vh;
+        
+    }
 
 
 #home-header{
     display: flex;
     justify-content:flex-start;
+    flex-direction: row;
     align-items: center;
     width: 100%;
     position: fixed;
@@ -440,11 +577,13 @@ h4{
 
 
 #home-menu{
-    position: absolute;
+    
     margin-top: 170px;
-    margin-left: 42%;
-    display: none;
-    z-index: 30;
+        margin-left: 42%;
+        top: auto; /* Disable top centering */
+        transform: none; /* Disable translate */
+        left: 0%;
+    
  }
 
  
@@ -470,6 +609,8 @@ h4{
     display: flex;    
     z-index: 3;
     position: relative;
+    overflow: hidden;
+    margin-top: 100px;
     
 }
 
@@ -483,7 +624,7 @@ h4{
     background-repeat: no-repeat;
     z-index: 3;
     position: relative;
-    margin-top: 100px;
+
     overflow: hidden;
     min-height: 100vh;
 }
@@ -498,7 +639,7 @@ h4{
     background-repeat: no-repeat;
     z-index: 9;
     position: relative;
-    margin-top: 100px;
+   
     overflow: hidden;
     min-height: 100vh;
 
@@ -506,10 +647,12 @@ h4{
 
  #split-left {
     width: 50%;
+    overflow: hidden;
   }
 
   #split-right {
     width: 50%;
+    overflow: hidden;
   }
   
 
@@ -762,7 +905,7 @@ h3{
 
 /* DESKTOP OVERLAY MENU MEDIA QUERIES */
 
-@media screen and (min-width: 429px) {
+@media screen and (min-width: 821px) {
     
 
     .overlay {
